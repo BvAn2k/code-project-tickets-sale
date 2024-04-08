@@ -1,24 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import "./App.css";
+import Home from "./pages/Home/Home";
+import LichChieuPage from "./pages/LichChieu/LichChieuPage";
+import TinTucPage from "./pages/TinTuc/TinTucPage";
+import QuestionPage from "./pages/QA/QuesionPage";
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/lichchieu" element={<LichChieuPage />} />
+        <Route path="/TinTuc" element={<TinTucPage/>}/>
+        <Route path="/Quesion" element={<QuestionPage/>}/>
+        <Route path="/tintuc" element={<TinTucPage/>}/>
+      </Routes>
+    </BrowserRouter>
   );
 }
 
